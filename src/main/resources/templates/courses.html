@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<style type="text/css">
+   iframe{
+	     height: 100px ;
+	     width: 500px;
+   }
+</style>
+</head>
+<body>
+	<table border>
+		<thead>
+			<tr>
+				<th>Lesson Id</th>
+				<th>Lesson Name</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="lesson:${Lesson}" >
+				<td th:text="${lesson.lessonId}"></td>
+				<td th:text="${lesson.lessonName}"></td>
+				
+				<td>
+				    <video controls>
+				        <source th:src="${lesson.link}" type="video/mpeg">
+				    </video>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
